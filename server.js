@@ -54,7 +54,7 @@ export function createApp({
 
       // GET all jobs
       if (req.method === "GET" && url.pathname === "/api/jobs") {
-        const jobs = await loadJobs(jobsPath)
+        const jobs = await loadJobs(jobsPath);
         return sendJson(
           res,
           200,
@@ -64,7 +64,7 @@ export function createApp({
 
       // GET saved jobs
       if (req.method === "GET" && url.pathname === "/api/saved") {
-        const jobs = await loadJobs(JOBS_PATH);
+        const jobs = await loadJobs(jobsPath);
         const savedIds = await getSavedIds(savedPath);
 
         const savedJobs = jobs.filter((job) =>
