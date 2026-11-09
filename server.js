@@ -88,7 +88,7 @@ export function createApp({
           });
         }
 
-        const jobs = await loadJobs(JOBS_PATH);
+        const jobs = await loadJobs(jobsPath);
         const job = findJob(jobs, body.jobId);
 
         if (!job) {
